@@ -21,7 +21,38 @@ Requires local Papis (tested with **0.16.1**) on macOS or Linux. The agent must 
 able to run shell commands and access your library. This targets local Codex and
 Claude Code; installing a skill in a cloud chat does not grant it local access.
 
-From this repository:
+### Install from GitHub with `npx skills`
+
+With Node.js/npm installed, run the command for your agent from any directory:
+
+```sh
+# Codex
+npx skills add ftripier/Papis-logger-skill --skill papis-logger -g -a codex
+
+# Claude Code
+npx skills add ftripier/Papis-logger-skill --skill papis-logger -g -a claude-code
+
+# Both
+npx skills add ftripier/Papis-logger-skill --skill papis-logger -g -a codex claude-code
+```
+
+`-g` installs for your user across projects. For a project-only installation,
+run the command from that project's directory and omit `-g`. This installs the
+skill and its bundled helper scripts; Papis must be installed separately.
+See the [Skills CLI documentation](https://github.com/vercel-labs/skills#options)
+for installation options.
+
+To check that the repository's skill is discoverable without installing it:
+
+```sh
+npx skills add ftripier/Papis-logger-skill --list
+```
+
+Start a new agent session if the skill does not appear.
+
+### Alternative: install from a local checkout
+
+After cloning this repository, run one of these commands from its directory:
 
 ```sh
 python3 install.py codex
