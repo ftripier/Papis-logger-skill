@@ -1,0 +1,4 @@
+interface:
+  display_name: "Papis Logger"
+  short_description: "Track papers, organize tags, and log research intent"
+  default_prompt: "Use $papis-logger to find or add papers and record why they matter to me."
